@@ -1,0 +1,20 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="main">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"  >
+      <div class="row" *ngFor="let value of values; index as i">
+        <div class="col-md-4" *ngFor="let val of value; index as j">
+          <button type="button" class="btn btn-primary" (click)="getClickedValue(val, i + 1,  j + 1)">{{val}}</button>
+        </div>
+        <br/><br/>
+      </div>
+    </div>
+    <div class="col-md-4 history">
+      <h5>Clicked History <button type="button" class="btn btn-primary btn-small" (click)="clearHistory()">Clear</button></h5>
+      <div *ngFor="let history of allHistory">
+        <span > Clicked On: {{history.key}}, Co-ordinates: {{history.values}} </span>
+      </div>
+    </div>
+  </div>
+</div>
